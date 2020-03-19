@@ -36,7 +36,7 @@ func parseMovies(g *geziyor.Geziyor, r *client.Response) {
 				description = strings.TrimSpace(description)
 
 				g.Exports <- map[string]interface{}{
-					"text":        strings.TrimSpace(s.Find("span.movie_card_header.title").Text()),
+					"title":        strings.TrimSpace(s.Find("span.movie_card_header.title").Text()),
 					"subtitle":    strings.TrimSpace(s.Find("span.sub_title.shedule_movie_text").Text()),
 					"sessions":    sessions,
 					"description": description,
